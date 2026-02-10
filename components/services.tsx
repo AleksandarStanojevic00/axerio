@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { useRef, useState } from "react";
+import { motion } from "framer-motion";
 import { Code2, Palette, Rocket, Search, ShoppingCart, ShieldCheck, Wrench } from "lucide-react";
 import { Container } from "@/components/container";
 import { SectionHeader } from "@/components/section-header";
@@ -12,10 +12,15 @@ const icons = [Code2, ShoppingCart, Search, Palette, Wrench, ShieldCheck];
 
 export function Services({ dictionary }: { dictionary: Dictionary }) {
   const sectionRef = useRef<HTMLElement | null>(null);
-  const launchRocket = useInView(sectionRef, { once: true, amount: 0.35 });
+  const [launchRocket, setLaunchRocket] = useState(false);
 
   return (
-    <section id="services" className="relative overflow-hidden py-20" ref={sectionRef}>
+    <section
+      id="services"
+      className="relative overflow-hidden py-20"
+      ref={sectionRef}
+      onMouseEnter={() => setLaunchRocket(true)}
+    >
       <div className="pointer-events-none absolute inset-x-0 top-0 z-10 hidden h-52 lg:block">
         <motion.svg
           className="absolute inset-0 h-full w-full"

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Container } from "@/components/container";
@@ -25,14 +25,6 @@ export default function Testimonials({ dictionary }: { dictionary: Dictionary })
     () => (dictionary.languageLabel === "Jezik" ? ["SaaS platforma", "E-commerce", "HealthTech"] : ["SaaS Platform", "E-commerce", "HealthTech"]),
     [dictionary.languageLabel]
   );
-
-  useEffect(() => {
-    const interval = window.setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % items.length);
-    }, 3800);
-
-    return () => window.clearInterval(interval);
-  }, [items.length]);
 
   const active = items[activeIndex];
   const company = active.role.includes(",") ? active.role.split(",")[1].trim() : active.role;

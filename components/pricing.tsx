@@ -23,7 +23,11 @@ export default function Pricing({
         <div className="grid gap-4 lg:grid-cols-3">
           {dictionary.pricing.tiers.map((tier) => (
             <motion.div key={tier.name} whileHover={{ y: -3 }}>
-              <Card className={cn(tier.featured ? "border-[var(--accent-primary)]" : "", "h-full")}>
+              <Card
+                className={cn(
+                  "h-full border-[var(--border)] transition-all duration-300 hover:border-[var(--accent-primary)] hover:shadow-[var(--shadow-hover)]"
+                )}
+              >
                 <CardContent className="flex h-full flex-col">
                   <h3 className="text-xl font-semibold text-[var(--text-primary)]">{tier.name}</h3>
                   <p className="mt-2 text-3xl font-semibold tracking-tight text-[var(--text-primary)]">{tier.price}</p>

@@ -123,7 +123,7 @@ export function Hero({
   };
 
   return (
-    <section id="home" className="relative overflow-hidden pb-20 pt-3 md:pt-4">
+    <section id="home" className="relative overflow-hidden pb-20 pt-0">
       <div className="hero-mesh absolute inset-0 -z-20" aria-hidden />
       <motion.div
         className="orb orb-a absolute -top-20 left-[6%] -z-10 h-56 w-56 rounded-full"
@@ -160,7 +160,7 @@ export function Hero({
             onMouseMove={handleMove}
             onMouseLeave={resetTilt}
           >
-            <div className="pointer-events-none absolute -top-40 left-2 right-2 z-0 h-[300px] overflow-hidden">
+            <div className="pointer-events-none absolute -top-28 left-0 right-0 z-0 h-[320px] overflow-hidden md:-top-36 md:h-[360px] lg:-top-[330px] lg:h-[560px]">
               <div className="matrix-overlay absolute inset-0" />
               <div className="matrix-fade absolute inset-0">
                 {matrixColumns.map((col, index) => (

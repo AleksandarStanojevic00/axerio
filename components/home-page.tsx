@@ -2,6 +2,8 @@
 
 import dynamic from "next/dynamic";
 import { useState } from "react";
+import { CosmicLowerBackground } from "@/components/cosmic-lower-background";
+import { DecorativeBackground } from "@/components/decorative-background";
 import { useLanguage } from "@/components/language-provider";
 import { Footer } from "@/components/footer";
 import { FeaturedWork } from "@/components/featured-work";
@@ -28,17 +30,25 @@ export function HomePage() {
   return (
     <div className="min-h-screen bg-[var(--background)] text-[var(--text-primary)]">
       <Navbar onBookCall={openCallModal} />
-      <main>
-        <Hero dictionary={dictionary} onBookCall={openCallModal} />
-        <SocialProof dictionary={dictionary} />
-        <Services dictionary={dictionary} />
-        <FeaturedWork dictionary={dictionary} />
-        <Process dictionary={dictionary} />
-        <Testimonials dictionary={dictionary} />
-        <Pricing dictionary={dictionary} onBookCall={openCallModal} />
-        <FAQ dictionary={dictionary} />
-        <ScheduleCta dictionary={dictionary} onBookCall={openCallModal} />
-        <ContactForm dictionary={dictionary} />
+      <main className="relative isolate">
+        <DecorativeBackground />
+        <div className="relative z-10">
+          <Hero dictionary={dictionary} onBookCall={openCallModal} />
+          <SocialProof dictionary={dictionary} />
+          <Services dictionary={dictionary} />
+          <FeaturedWork dictionary={dictionary} />
+          <Process dictionary={dictionary} />
+          <section className="relative isolate overflow-hidden">
+            <CosmicLowerBackground />
+            <div className="relative z-10">
+              <Testimonials dictionary={dictionary} />
+              <Pricing dictionary={dictionary} onBookCall={openCallModal} />
+              <FAQ dictionary={dictionary} />
+              <ScheduleCta dictionary={dictionary} onBookCall={openCallModal} />
+              <ContactForm dictionary={dictionary} />
+            </div>
+          </section>
+        </div>
       </main>
       <Footer dictionary={dictionary} />
       <ScheduleCallModal
