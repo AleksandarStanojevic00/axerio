@@ -25,7 +25,7 @@ export default function Pricing({
             <motion.div key={tier.name} whileHover={{ y: -3 }}>
               <Card
                 className={cn(
-                  "h-full border-[var(--border)] transition-all duration-300 hover:border-[var(--accent-primary)] hover:shadow-[var(--shadow-hover)]"
+                  "pricing-focus-card h-full border-[var(--border)] transition-all duration-300 hover:border-[var(--accent-primary)] hover:shadow-[var(--shadow-hover)]"
                 )}
               >
                 <CardContent className="flex h-full flex-col">
@@ -52,3 +52,4 @@ export default function Pricing({
     </section>
   );
 }
+

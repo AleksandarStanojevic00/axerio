@@ -18,7 +18,7 @@ export function Process({ dictionary }: { dictionary: Dictionary }) {
           {dictionary.process.steps.map((step, index) => (
             <motion.li
               key={step.title}
-              className="relative rounded-3xl border border-[var(--border)] bg-[var(--card)] p-6 shadow-[var(--shadow-soft)]"
+              className="mobile-focus-frame relative rounded-3xl border border-[var(--border)] bg-[var(--card)] p-6 shadow-[var(--shadow-soft)]"
               whileHover={{ y: -3 }}
             >
               <span className="mb-4 inline-flex h-8 w-8 items-center justify-center rounded-full bg-[var(--accent-soft)] text-sm font-semibold text-[var(--accent-primary)]">
@@ -33,3 +33,4 @@ export function Process({ dictionary }: { dictionary: Dictionary }) {
     </section>
   );
 }
+

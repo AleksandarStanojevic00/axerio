@@ -13,7 +13,7 @@ function AccordionItem({
 }: React.ComponentProps<typeof AccordionPrimitive.Item>) {
   return (
     <AccordionPrimitive.Item
-      className={cn("rounded-2xl border border-[var(--border)] bg-[var(--card)] px-5", className)}
+      className={cn("mobile-focus-frame rounded-2xl border border-[var(--border)] bg-[var(--card)] px-5", className)}
       {...props}
     />
   );
@@ -59,3 +59,4 @@ function AccordionContent({
 }
 
 export { Accordion, AccordionContent, AccordionItem, AccordionTrigger };
+

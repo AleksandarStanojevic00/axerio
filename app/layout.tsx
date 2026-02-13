@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Manrope, Sora } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { LanguageProvider } from "@/components/language-provider";
+import { MobileFocusObserver } from "@/components/mobile-focus-observer";
 import "./globals.css";
 
 const headingFont = Sora({
@@ -50,7 +51,10 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${headingFont.variable} ${bodyFont.variable} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <LanguageProvider>{children}</LanguageProvider>
+          <LanguageProvider>
+            <MobileFocusObserver />
+            {children}
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>
